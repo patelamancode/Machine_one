@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./card.css";
+import { DataContext } from '../context/dataContext';
 
 const Card2 = ({image, author, title}) => {
+
+    const {categoryHandler} = useContext(DataContext);
+
   return (
     <div className='card'>
       <div className='card-img'>
         <img src={image} alt={title} />
-        <select>
-        <option>select</option>
-            <option value="Currently Reading">Currently Reading</option>
+        <select onChange={(value)=>categoryHandler(value)}>
+            <option>select</option>
+            <option name="Currently Reading">Currently Reading</option>
             <option name="Want to Read">Want to Read</option>
             <option name="Read">Read</option>
             <option>none</option>

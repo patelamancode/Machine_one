@@ -9,7 +9,7 @@ const Homepage = () => {
 
   return (
     <>
-        <section >
+        <section>
             <h1>Currently Reading</h1>
             <div style={{display:'flex', flexDirection:'row', margin:'5px'}}>
                 {books.map((item) => item.category === "Currently Reading" && <Card2 {...item}/>)}
